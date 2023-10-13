@@ -60,18 +60,18 @@ void delete(Dequeue *dq) {
     }
 }
 
-void rotate(Dequeue *dq, int x) {
+void rotate(Dequeue *dq, int n) {
     if (dq->front == -1) {
         return;
     }
     if (x< 0) {
-        for (int i = 0; i < -x; i++) {
+        for (int i = 0; i < -n; i++) {
             int v = dq->elements[dq->rear];
             delete(dq);
             insertRear(dq, v);
         }
-    } else if (x > 0) {
-        for (int i = 0; i < x; i++) {
+    } else if (n > 0) {
+        for (int i = 0; i < n; i++) {
             int v = dq->elements[dq->front];
             delete(dq);
             insertRear(dq, v);
